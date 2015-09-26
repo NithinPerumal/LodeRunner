@@ -1,0 +1,30 @@
+Loderunner Cycle 1 plans:
+
+Team #19          Members: Nithin Perumal, Timothy Smith, Karan Shishoo
+
+USER STORIES:
+
+List the user stories that you plan to implement in cycle 1:
+None of the user stories, but we decided to create the world and the main menu screen as well as plan out
+the rest of the project.  We decided we could implement the "user stories" we listed over the next couple of
+weeks.
+
+
+
+RESEARCH:   
+What information/techniques does your team need to research, and who is assigned to investigate what?
+
+Timothy Smith -> Layout managers
+
+Nithin Perumal -> Activating multiple threads when a button (such as the play button) is pressed.
+
+Karan Shishoo -> Figuring out inheritance relationships between characters (guards and the protagonist) and
+the blocks present in the world.
+
+
+
+
+
+MISC:
+Describe any other aspects of your plans for cycle 1.
+Implementing the parts mentioned above and also implementing the exit game button.

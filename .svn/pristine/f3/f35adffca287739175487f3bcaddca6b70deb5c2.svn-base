@@ -1,0 +1,62 @@
+package loderunner;
+/**
+ * @author Team 19 - Nithin Perumal, Timothy Smith, Karan Shishoo
+ */
+
+import java.awt.BorderLayout;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class NewgameMain {
+	
+	public static void main(String name) {
+		JFrame background = new JFrame();
+		background.setSize(790, 820);
+		Scanner scanner;
+		try {
+			scanner = new Scanner(new File("src/loderunner/level_1"));
+			Block[][] level1 = new Block[22][22];
+			for (int j = 0; j < 22; j++) {
+				for (int i = 0; i < 22; i++) {
+					int value = scanner.nextInt();
+					if(value == 1){
+						level1[i][j] = new Brick(i, j);
+					}
+					else if(value == 0){
+						level1[i][j] = new Air(i, j);
+					}
+					else if(value == 2){
+						level1[i][j] = new Ladder(i, j);
+					}
+					else if(value == 3){
+						level1[i][j] = new Gold(i, j);
+					}
+					else if(value == 4){
+						level1[i][j] = new Board(i, j);
+					}
+					else if(value == 5){
+						level1[i][j] = new Pipe(i, j);
+					}
+					else if(value == 6){
+						level1[i][j] = new Plank(i, j);
+					}
+					else if(value == 7){
+						level1[i][j] = new Spawn(i, j);
+					}
+				}
+			}
+			BackgroundComponent data = new BackgroundComponent(level1,name);
+			data.setlevel(1);
+			background.add(BorderLayout.CENTER, data);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		background.validate();
+		background.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		background.setVisible(true);
+	}
+}

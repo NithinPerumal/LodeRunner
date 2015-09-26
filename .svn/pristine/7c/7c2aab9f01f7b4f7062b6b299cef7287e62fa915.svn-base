@@ -1,0 +1,72 @@
+package loderunner;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+
+import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public abstract class Block extends JComponent implements Drawable, Temporal {
+	private JFrame Loade_world;
+	private Rectangle shape;
+	private boolean breakable;
+	public JComponent block;
+	public double x;
+	public double y;
+	
+	public Block(int x_pos, int y_pos){
+//		this.colour = Color.red;
+		this.shape = new Rectangle(x_pos*35, y_pos*35,35,35);
+		this.x = x_pos;
+		this.y = y_pos;
+	}
+	
+	public abstract boolean Passable();
+	
+	public Point2D getPosition() {
+		return new Point2D.Double(this.x, this.y);
+	}
+	
+	@Override
+	public void die() {
+		this.Loade_world.remove(this.block);
+	}
+
+	@Override
+	public abstract Color getColor();
+
+	@Override
+	public abstract Shape getShape();
+	
+	@Override
+	public abstract boolean breakable();
+	
+	public abstract String getType();
+	
+	public abstract int getCounter();
+	
+	public abstract void incrementCounter();
+	
+	public abstract boolean isClimbeable();
+	
+	public abstract boolean isFallable();
+	
+	public abstract boolean isHangable();
+	
+	public boolean isCharacterInSameSpot(AbstractCharacter hero, AbstractCharacter guard){
+		if ((hero.getX() + 5 >= guard.getX() && hero.getX() - 5 <= guard.getX())
+				&& (hero.getY() + 5 >= guard.getY() && hero.getY() - 5 >= this.y)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	
+}

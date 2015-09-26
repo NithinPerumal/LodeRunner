@@ -1,0 +1,151 @@
+package loderunner;
+
+import java.awt.Color;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.geom.Point2D;
+
+public class Hero extends AbstractCharacter {
+	public int x;
+	public int y;
+	private Rectangle shape;
+	private Color heroColor;
+	private Block[][] blockList;
+	public boolean isFalling = false;
+	public boolean isCorrect = true;
+	int BLOCKSIZE = 35;
+	int HEROSIZE = 20;
+	public boolean died=false;
+
+	public Hero(int x_pos, int y_pos, Block[][] blocks) {
+		super(x_pos, y_pos, blocks);
+		this.x = x_pos;
+		this.y = y_pos;
+		this.blockList = blocks;
+		this.shape = new Rectangle(x_pos, y_pos, HEROSIZE, HEROSIZE);
+		this.heroColor = Color.GREEN;
+	}
+
+	public void updatePosition(int deltaX, int deltaY) {
+		int column = (this.x + 10) / BLOCKSIZE;
+		int leftColumn = column - 1;
+		int rightColumn = column + 1;
+		int Row = (this.y + 10) / BLOCKSIZE;
+
+		// Left-Right Code
+		if (deltaX > 0) {
+			if (this.blockList[rightColumn][Row].Passable()) {
+				this.x += deltaX;
+			}
+			if (!(this.blockList[rightColumn][Row].Passable())) {
+				if (this.x + HEROSIZE + deltaX <= (rightColumn) * BLOCKSIZE) {
+					this.x += deltaX;
+				}
+			}
+			if (this.y >= (Row) * BLOCKSIZE - 15
+					&& this.blockList[column][Row + 1].getType() == "Brick") {
+				this.isCorrect = false; // To make sure the hero is on the
+										// ground when moving
+										// off of a ladder
+			}
+		}
+		if (deltaX < 0) {
+			if (leftColumn < 0) {
+				leftColumn = 0;
+			}
+			if (this.blockList[leftColumn][Row].Passable()) {
+				this.x += deltaX;
+			}
+			if (!(this.blockList[leftColumn][Row].Passable())) {
+				if (this.x + deltaX >= (leftColumn) * BLOCKSIZE + 35) {
+					this.x += deltaX;
+				}
+			}
+			if (this.y >= (Row) * BLOCKSIZE - 15
+					&& this.blockList[column][Row + 1].getType() == "Brick") {
+				this.isCorrect = false; // To make sure the hero is on the
+										// ground when moving
+										// off of a ladder
+			}
+
+		}
+
+		// Climbing ladders
+		if (deltaY > 0) {
+			if (this.blockList[column][Row].isClimbeable()
+					|| this.blockList[column][Row + 1].isClimbeable()) {
+				this.y -= deltaY;
+			}
+
+			if (this.blockList[column][Row + 1].isClimbeable()
+					&& !this.blockList[column][Row].isClimbeable()) {
+				this.y -= this.y - deltaY - ((Row) * BLOCKSIZE + 10);
+			}
+		}
+
+		if (deltaY < 0) {
+			if (this.blockList[column][Row + 1].isClimbeable()) {
+				this.y -= deltaY;
+			}
+
+			if (!(this.blockList[column][Row + 1].isClimbeable())) {
+				if (this.y + HEROSIZE - deltaY <= (Row + 1) * BLOCKSIZE) {
+					this.y -= deltaY;
+				}
+			}
+		}
+
+		// Falling code
+		if (this.blockList[column][Row + 1].isFallable()
+				&& !(this.blockList[column + 1][Row].isHangable() || this.blockList[column - 1][Row]
+						.isHangable())) {
+			this.isFalling = true;
+			this.isCorrect = false;
+		} else {
+			this.isFalling = false;
+		}
+		if (!(this.blockList[column][Row + 1].isFallable())
+				&& (this.y >= (Row) * BLOCKSIZE + 15)
+				&& !(this.isCorrect)) {
+			this.isCorrect = true;
+			this.isFalling = false;
+		}
+		this.shape = new Rectangle(this.x, this.y, HEROSIZE, HEROSIZE);
+	}
+
+	@Override
+	public Color getColor() {
+		return this.heroColor;
+	}
+
+	@Override
+	public void setColor(Color newColor) {
+		this.heroColor = newColor;
+	}
+
+	@Override
+	public Shape getShape() {
+		return this.shape;
+	}
+
+	@Override
+	public boolean checkFall() {
+		return this.isFalling;
+	}
+
+	@Override
+	public double getX() {
+		return this.x;
+	}
+
+	@Override
+	public double getY() {
+		return this.y;
+	}
+
+	@Override
+	public boolean die() {
+		return this.died;
+	}
+
+}

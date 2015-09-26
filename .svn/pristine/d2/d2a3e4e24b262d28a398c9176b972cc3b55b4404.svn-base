@@ -1,0 +1,20 @@
+User stories
+User runs the program and opens the main menu screen
+User can click the exit button to exit the game
+User presses the play game button on menu screen. A world shows up.
+Hero should be able to climb ladders and fall down.
+Guards appear on the screen and move around.
+User presses the left or right arrow keys. The hero begins to move to the left or right respectively.
+Hero encounters a ladder. If user presses the up or down arrow keys at this time, the hero moves up or down the ladder.
+Hero or guard encounters a rope. Keeps moving by hanging on the rope.
+Hero encounters a rope while falling, he stops falling and hangs by the rope.
+Hero finds gold. The gold disappears and the visible score increases. If the last gold an exit ladder is placed. 
+Bricks are in front of the hero. The user presses X and digs through them.
+Bricks are below the hero. The user presses Z and digs the bricks block in front of him.
+Bricks after a period of time after being broken reappear killing anything in their spot.
+Hero runs into a guard. Hero dies and level restarts.
+Guard encounters gold. The gold is removed from the map until the guard dies.
+A guard dies. A new one replaces him spawning from the top of the screen.
+User presses the U key. The game goes to the next level.
+User presses the D key. The game goes to the previous level.
+User can load a previous save game file

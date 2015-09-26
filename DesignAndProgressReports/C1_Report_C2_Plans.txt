@@ -1,0 +1,50 @@
+Loderunner Cycle 1 report and Cycle 2 plans:
+
+Team #19         Members: Nithin Perumal, Karan Shishoo, Timothy Smith
+
+
+CYCLE 1 REPORT:
+
+Which user stories did your team successfully implement and test?
+
+User runs the program and opens the main menu screen
+User can click the exit button to exit the game
+
+
+Which stories were in your plans, but did not get done?  Describe the state of each.
+
+User presses the play game button on menu screen. Starts the game on level 1.
+It was almost completed, a few bugs that we have been working out.
+
+
+What research experiments did your team do as you learn about technologies?
+
+We looked up different ways of implementing the world, etc.
+
+
+Briefly describe the main contributions of each team member during Cycle 1.
+Nithin -> Designed the menu screen and created button functionality
+Karan -> Helped debug the code on the new game button, started creation of the world object
+Tim -> Set up the world screen and helped creation of the world object
+
+CYCLE 2 PLANS:
+
+
+USER STORIES:
+
+List the user stories that you plan to implement in Cycle 2:
+User presses the play game button on menu screen. Starts the game on level 1.
+We also plan to finish creating the world, block and character objects and implementing these into the world.
+
+
+
+RESEARCH:   
+What information/techniques does your team need to research, and who is assigned to investigate what?
+We need to research the possible ways we could implement such objects.  Each of us will work on one of these
+objects - we are not sure who will work on what at the current time.
+
+
+
+MISC:
+Describe any other aspects of your plans for cycle 2.
+We will hopefully get a game screen to show up and get up some basic movement for the character

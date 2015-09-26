@@ -1,0 +1,67 @@
+Loderunner Cycle 2 report and Cycle 3 plans:
+
+Team #19         Members: Nithin Perumal, Timothy Smith, Karan Shishoo
+
+
+CYCLE 2 REPORT:
+
+Which user stories did your team successfully implement and test?
+User presses the play game button on menu screen. Starts the game on level 1.
+We also plan to finish creating the world, block and the hero object and implementing these into the world.
+
+
+
+Which stories were in your plans, but did not get done?  Describe the state of each.
+
+We managed to implement all the features that we wanted to implement in full.
+
+
+What research experiments did your team do as you learn about technologies?
+We researched to find out more about reading files line by line to design levels.  We also improved ourselves in
+implementing interfaces and abstract classes to set up the game and the objects available in the game such as
+different blocks and the hero.
+
+
+
+Briefly describe the main contributions of each team member during Cycle 2.
+Nithin -> Created the abstract block class and its sub classes to set up the objects of the world.  Also implemented
+the buttons on the main menu. (Help, exit and most of new game)
+Karan -> Implemented the file reader and improved on the Background Component and frame to read the level data from
+the file and display the level on the screen with the help of the object classes created.
+Tim -> Created the hero and added its properties and helped with setting the background colors up.
+
+CYCLE 3 PLANS:
+
+
+USER STORIES:
+
+List the user stories that you plan to implement in Cycle 3:
+Guards appear on the screen and move around.
+User presses the left or right arrow keys. The hero begins to move to the left or right respectively.
+Hero encounters a ladder. If user presses the up or down arrow keys at this time, the hero moves up or down the ladder.
+Hero or guard encounters a rope. Keeps moving by hanging on the rope.
+Hero encounters a rope while falling, he stops falling and hangs by the rope.
+Hero finds gold. The gold disappears and the visible score increases. If the last gold an exit ladder is placed. 
+Ladders and Falling should also be functional
+
+
+
+RESEARCH:   
+What information/techniques does your team need to research, and who is assigned to investigate what?
+We will need to investigate how to move the characters around the screen smoothly and implementing guards with
+random movement(for now).
+
+Nithin -> Will look into making the guards and making them move around the map.
+Tim -> Moving the hero and picking up gold.
+Karan -> Will look into making hero and guards capable of moving along ropes and climbing up ladders
+
+
+
+
+
+
+MISC:
+Describe any other aspects of your plans for cycle 3.
+
+We will attempt to implement a few more levels and we will also put the guards on random movement temporarily
+for testing purposes.

@@ -1,0 +1,84 @@
+Loderunner Cycle 3 report and Cycle 4 plans:
+
+Team #19          Members:Nithin Perumal, Karan Shishoo, Timothy Smith		
+
+
+CYCLE 3 REPORT:
+
+Which user stories did your team successfully implement and test?
+Guards appear on the screen and move around.
+User presses the left or right arrow keys. The hero begins to move to the left or right respectively.
+Hero encounters a ladder. If user presses the up or down arrow keys at this time, the hero moves up or down the ladder.
+Ladders and Falling should also be functional - mostly
+Hero or guard encounters a rope. Keeps moving by hanging on the rope.
+User presses the U key. The game goes to the next level.
+
+
+
+Which stories were in your plans, but did not get done?  Describe the state of each.
+We were unable to get the hero and guards to pick up gold blocks but we are in the process of getting this part
+done with.
+
+
+
+What research experiments did your team do as you learn about technologies?
+We learned about using the keylisteners as well as where to place them to avoid impeding the functionality of a
+program.  We also learned more about implementing threads in our program.
+
+
+
+Briefly describe the main contributions of each team member during Cycle 3.
+Nithin -> Implemented the guard class to have it appear and use random movement (for now).  Also helped in
+setting up and improving the other classes to increase their compatibility with the game's requirements
+
+Tim -> Implemented the hero class in almost its entirety (apart from block breaking and gold collection)
+
+Karan -> Worked on creating some new levels as well as refreshing the screen to improve movement of the character.
+Also made the map read off of a text document accurately.
+
+
+
+
+CYCLE 4 PLANS:
+
+
+USER STORIES:
+
+List the user stories that you plan to implement in Cycle 4:
+Hero finds gold. The gold disappears and the visible score increases. If the last gold an exit ladder is placed. 
+Bricks are in front of the hero. The user presses X and digs through them.
+Bricks are below the hero. The user presses Z and digs the bricks block in front of him.
+Bricks after a period of time after being broken reappear killing anything in their spot.
+Hero runs into a guard. Hero dies and level restarts.
+Guard encounters gold. The gold is removed from the map until the guard dies.
+A guard dies. A new one replaces him spawning from the top of the screen.
+User presses the D key. The game goes to the previous level.
+User can load a previous save game file
+
+
+
+RESEARCH:   
+What information/techniques does your team need to research, and who is assigned to investigate what?
+We will need to work on destroying guard objects and creating new ones as well as fixing the glitches that
+exist in the game currently.  We will also try to implement a save/load ablity to our game along with some other
+extras.
+
+Nithin -> Will work on using key presses to destroy the bricks as well as fixing some of the pre-existing glitches
+that are all over the game.
+
+Karan -> Will work on making the buttons to increase / decrease levels less glitchy as well as work on making
+the guards chase after the hero character.  Will also work on letting the guards collect gold.
+
+Tim -> Will work further on the hero to make him capable of collecting gold and perform other actions that have
+not yet been able.
+
+
+
+
+
+
+MISC:
+Describe any other aspects of your plans for cycle 4.
+
+We will attempt to add some other extras to the game if time permits.  We hope to be able to create a save/load
+interface for our game as well as possibly use images rather than boxes for our heroes and guards.

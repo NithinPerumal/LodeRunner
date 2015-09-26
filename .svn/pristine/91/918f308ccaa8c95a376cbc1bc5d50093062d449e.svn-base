@@ -1,0 +1,44 @@
+package loderunner;
+
+import java.awt.Color;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.geom.Point2D;
+
+public abstract class AbstractCharacter {
+	private double x;
+	private double y;
+	private Rectangle shape;
+	private Block[][] blockList;
+	private boolean isFalling;
+	
+	public AbstractCharacter(int x_pos, int y_pos, Block[][] blocks){
+		this.x = x_pos;
+		this.y = y_pos;
+		this.shape = new Rectangle(0, 0, 0, 0);
+		this.blockList = blocks;
+		this.isFalling = false;
+	}
+	
+	public abstract Color getColor();
+	
+	public abstract void setColor(Color newColor);
+	
+	public abstract Shape getShape();
+	
+	public abstract void updatePosition(int deltaX, int deltaY);
+	
+	public abstract boolean checkFall();
+	
+	public abstract boolean die();
+	
+	public double getX() {
+		return this.x;
+	}
+	
+	public double getY() {
+		return this.y;
+	}
+	
+	
+}
